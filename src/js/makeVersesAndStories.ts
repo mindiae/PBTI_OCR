@@ -36,12 +36,7 @@ for await (let line of rl) {
   line
     .replace(
       /^(\d+),(\d+)?,(\d+)?,$/,
-      (
-        _,
-        book_number,
-        chapter_number,
-        verse_number
-      ) => {
+      (_, book_number, chapter_number, verse_number) => {
         if (bookNumber !== book_number) {
           console.error('book numbers does not match');
         }
