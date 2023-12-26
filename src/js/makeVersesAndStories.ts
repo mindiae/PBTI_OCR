@@ -7,18 +7,6 @@ if (!bookNumber) {
   console.error('please provide a book number of bible');
 }
 
-if (!fs.existsSync('output/')) {
-  fs.mkdirSync('output/');
-}
-
-if (!fs.existsSync('output/verses/')) {
-  fs.mkdirSync('output/verses/');
-}
-
-if (!fs.existsSync('output/stories/')) {
-  fs.mkdirSync('output/stories/');
-}
-
 fs.writeFileSync(`output/verses/${bookNumber}.csv`, '');
 fs.writeFileSync(`output/stories/${bookNumber}.csv`, '');
 

@@ -1,3 +1,7 @@
-/output
+/output/database/*
+/output/verses/*
+/output/stories/*
+/output/stories.csv
+/output/verses.csv
 /node_modules
 pnpm-lock.yaml
