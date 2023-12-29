@@ -1,4 +1,4 @@
-import fs from 'fs';
+import fs from 'node:fs';
 import readline from 'readline';
 
 const bookNumber = process.argv[2];
@@ -17,8 +17,8 @@ const rl = readline.createInterface({
   crlfDelay: Infinity
 });
 
-let chapter: string;
-let verse: string;
+let chapter = '';
+let verse = '';
 
 for await (let line of rl) {
   line
@@ -34,7 +34,7 @@ for await (let line of rl) {
         return '';
       }
     )
-    .replace(/^- (.+)$/, (_: string, story: string) => {
+    .replace(/^- (.+)$/, (_, story) => {
       fs.appendFileSync(
         `output/stories/${bookNumber}.csv`,
         `'${bookNumber}','${chapter}','${parseInt(verse) + 1}','${story}'` +
