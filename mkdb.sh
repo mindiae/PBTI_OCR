@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+ls src/books/*.csv | awk -F"/" '{print $3}' | sed 's/\.csv//'|xargs -I {} pnpm build {}
+
+cat output/verses/* >output/verses.csv
+cat output/stories/* >output/stories.csv
+
 # Specify the path to your SQLite database
 DB_PATH="output/database/PBTI.SQLite3"
 
